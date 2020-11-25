@@ -1,0 +1,467 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE sqlMap PUBLIC "-//iBATIS.com//DTD SQL Map 2.0//EN" "http://www.ibatis.com/dtd/sql-map-2.dtd">
+	<!--      table information
+		Generate time : 2020-11-18 16:28:56
+   		Version :  1.0
+		tableName :iplatim.timmbs01 
+		 ID  INTEGER   NOT NULL   primarykey, 
+		 RCTOR  VARCHAR   NOT NULL, 
+		 RCTIME  VARCHAR   NOT NULL, 
+		 RRTOR  VARCHAR   NOT NULL, 
+		 RRTIME  VARCHAR   NOT NULL, 
+		 RDTOR  VARCHAR   NOT NULL, 
+		 RDTIME  VARCHAR   NOT NULL, 
+		 RSTATE  VARCHAR   NOT NULL, 
+		 RDEL  VARCHAR   NOT NULL, 
+		 COM_NAME  VARCHAR   NOT NULL, 
+		 COM_CODE  VARCHAR   NOT NULL, 
+		 ITEM_CODE  VARCHAR   NOT NULL, 
+		 ITEM_NAME  VARCHAR   NOT NULL, 
+		 ITEM_DES  VARCHAR   NOT NULL, 
+		 MEAS_UNIT  VARCHAR   NOT NULL, 
+		 ALGO_SUB  VARCHAR, 
+		 ALGO_PAR  VARCHAR, 
+		 DATA_TYPE  VARCHAR   NOT NULL, 
+		 ITEM_CODE_PERF  VARCHAR   NOT NULL, 
+		 BC001  VARCHAR, 
+		 BC002  VARCHAR, 
+		 BC003  VARCHAR, 
+		 BC004  VARCHAR, 
+		 BC005  VARCHAR, 
+		 BC006  VARCHAR, 
+		 BC007  VARCHAR, 
+		 BC008  VARCHAR, 
+		 BC009  VARCHAR, 
+		 BC010  VARCHAR, 
+		 BC011  VARCHAR, 
+		 BC012  VARCHAR, 
+		 BC013  VARCHAR, 
+		 BC014  VARCHAR, 
+		 BC015  VARCHAR, 
+		 BC016  VARCHAR, 
+		 BC017  VARCHAR, 
+		 BC018  VARCHAR, 
+		 BC019  VARCHAR, 
+		 BC020  VARCHAR, 
+		 BN001  INTEGER, 
+		 BN002  INTEGER, 
+		 BN003  INTEGER, 
+		 BN004  INTEGER, 
+		 BN005  INTEGER, 
+		 BN006  INTEGER, 
+		 BN007  INTEGER, 
+		 BN008  INTEGER, 
+		 BN009  INTEGER, 
+		 BN010  INTEGER, 
+		 BN011  INTEGER, 
+		 BN012  INTEGER, 
+		 BN013  INTEGER, 
+		 BN014  INTEGER, 
+		 BN015  INTEGER, 
+		 BN016  INTEGER, 
+		 BN017  INTEGER, 
+		 BN018  INTEGER, 
+		 BN019  INTEGER, 
+		 BN020  INTEGER
+	-->
+<sqlMap namespace="timmbs01">
+
+	<select id="query" parameterClass="java.util.HashMap" 
+			resultClass="com.baosight.iplatim.common.im.domain.Timmbs01">
+		SELECT
+				ID	as "id",  <!-- 主键 -->
+				RCTOR	as "rctor",  <!-- 记录创建责任者 -->
+				RCTIME	as "rctime",  <!-- 记录创建时刻 -->
+				RRTOR	as "rrtor",  <!-- 记录修改责任者 -->
+				RRTIME	as "rrtime",  <!-- 记录修改时刻 -->
+				RDTOR	as "rdtor",  <!-- 修改/删除责任者 -->
+				RDTIME	as "rdtime",  <!-- 修改/删除时间 -->
+				RSTATE	as "rstate",  <!-- 归档标记 -->
+				RDEL	as "rdel",  <!-- 删除标记 -->
+				COM_NAME	as "comName",  <!-- 公司(帐套)中文 -->
+				COM_CODE	as "comCode",  <!-- 公司(帐套)代码 -->
+				ITEM_CODE	as "itemCode",  <!-- 指标代码 -->
+				ITEM_NAME	as "itemName",  <!-- 指标简称 -->
+				ITEM_DES	as "itemDes",  <!-- 指标描述 -->
+				MEAS_UNIT	as "measUnit",  <!-- 计量单位 -->
+				ALGO_SUB	as "algoSub",  <!-- 子项算法 -->
+				ALGO_PAR	as "algoPar",  <!-- 母项算法 -->
+				DATA_TYPE	as "dataType",  <!-- 数据类型 -->
+				ITEM_CODE_PERF	as "itemCodePerf",  <!-- 实绩指标代码 -->
+				BC001	as "bc001",  <!-- 备用字符001 -->
+				BC002	as "bc002",  <!-- 备用字符002 -->
+				BC003	as "bc003",  <!-- 备用字符003 -->
+				BC004	as "bc004",  <!-- 备用字符004 -->
+				BC005	as "bc005",  <!-- 备用字符005 -->
+				BC006	as "bc006",  <!-- 备用字符006 -->
+				BC007	as "bc007",  <!-- 备用字符007 -->
+				BC008	as "bc008",  <!-- 备用字符008 -->
+				BC009	as "bc009",  <!-- 备用字符009 -->
+				BC010	as "bc010",  <!-- 备用字符010 -->
+				BC011	as "bc011",  <!-- 备用字符011 -->
+				BC012	as "bc012",  <!-- 备用字符012 -->
+				BC013	as "bc013",  <!-- 备用字符013 -->
+				BC014	as "bc014",  <!-- 备用字符014 -->
+				BC015	as "bc015",  <!-- 备用字符015 -->
+				BC016	as "bc016",  <!-- 备用字符016 -->
+				BC017	as "bc017",  <!-- 备用字符017 -->
+				BC018	as "bc018",  <!-- 备用字符018 -->
+				BC019	as "bc019",  <!-- 备用字符019 -->
+				BC020	as "bc020",  <!-- 备用字符020 -->
+				BN001	as "bn001",  <!-- 备用数值001 -->
+				BN002	as "bn002",  <!-- 备用数值002 -->
+				BN003	as "bn003",  <!-- 备用数值003 -->
+				BN004	as "bn004",  <!-- 备用数值004 -->
+				BN005	as "bn005",  <!-- 备用数值005 -->
+				BN006	as "bn006",  <!-- 备用数值006 -->
+				BN007	as "bn007",  <!-- 备用数值007 -->
+				BN008	as "bn008",  <!-- 备用数值008 -->
+				BN009	as "bn009",  <!-- 备用数值009 -->
+				BN010	as "bn010",  <!-- 备用数值010 -->
+				BN011	as "bn011",  <!-- 备用数值011 -->
+				BN012	as "bn012",  <!-- 备用数值012 -->
+				BN013	as "bn013",  <!-- 备用数值013 -->
+				BN014	as "bn014",  <!-- 备用数值014 -->
+				BN015	as "bn015",  <!-- 备用数值015 -->
+				BN016	as "bn016",  <!-- 备用数值016 -->
+				BN017	as "bn017",  <!-- 备用数值017 -->
+				BN018	as "bn018",  <!-- 备用数值018 -->
+				BN019	as "bn019",  <!-- 备用数值019 -->
+				BN020	as "bn020" <!-- 备用数值020 -->
+		FROM iplatim.timmbs01 WHERE 1=1
+		<isNotEmpty prepend=" AND " property="id">
+			ID = #id#
+		</isNotEmpty>
+		<dynamic prepend="ORDER BY">
+         <isNotEmpty property="orderBy">
+    		  $orderBy$
+   		 </isNotEmpty>
+   		<isEmpty property="orderBy">
+    		  ID asc
+		</isEmpty>
+  		</dynamic>
+			
+	</select>
+
+	<select id="count" resultClass="int">
+		SELECT COUNT(*) FROM iplatim.timmbs01 WHERE 1=1
+		<isNotEmpty prepend=" AND " property="id">
+			ID = #id#
+		</isNotEmpty>
+	</select>
+	
+	<!--  
+		<isNotEmpty prepend=" AND " property="id">
+			ID = #id#
+		</isNotEmpty>
+		<isNotEmpty prepend=" AND " property="rctor">
+			RCTOR = #rctor#
+		</isNotEmpty>
+		<isNotEmpty prepend=" AND " property="rctime">
+			RCTIME = #rctime#
+		</isNotEmpty>
+		<isNotEmpty prepend=" AND " property="rrtor">
+			RRTOR = #rrtor#
+		</isNotEmpty>
+		<isNotEmpty prepend=" AND " property="rrtime">
+			RRTIME = #rrtime#
+		</isNotEmpty>
+		<isNotEmpty prepend=" AND " property="rdtor">
+			RDTOR = #rdtor#
+		</isNotEmpty>
+		<isNotEmpty prepend=" AND " property="rdtime">
+			RDTIME = #rdtime#
+		</isNotEmpty>
+		<isNotEmpty prepend=" AND " property="rstate">
+			RSTATE = #rstate#
+		</isNotEmpty>
+		<isNotEmpty prepend=" AND " property="rdel">
+			RDEL = #rdel#
+		</isNotEmpty>
+		<isNotEmpty prepend=" AND " property="comName">
+			COM_NAME = #comName#
+		</isNotEmpty>
+		<isNotEmpty prepend=" AND " property="comCode">
+			COM_CODE = #comCode#
+		</isNotEmpty>
+		<isNotEmpty prepend=" AND " property="itemCode">
+			ITEM_CODE = #itemCode#
+		</isNotEmpty>
+		<isNotEmpty prepend=" AND " property="itemName">
+			ITEM_NAME = #itemName#
+		</isNotEmpty>
+		<isNotEmpty prepend=" AND " property="itemDes">
+			ITEM_DES = #itemDes#
+		</isNotEmpty>
+		<isNotEmpty prepend=" AND " property="measUnit">
+			MEAS_UNIT = #measUnit#
+		</isNotEmpty>
+		<isNotEmpty prepend=" AND " property="algoSub">
+			ALGO_SUB = #algoSub#
+		</isNotEmpty>
+		<isNotEmpty prepend=" AND " property="algoPar">
+			ALGO_PAR = #algoPar#
+		</isNotEmpty>
+		<isNotEmpty prepend=" AND " property="dataType">
+			DATA_TYPE = #dataType#
+		</isNotEmpty>
+		<isNotEmpty prepend=" AND " property="itemCodePerf">
+			ITEM_CODE_PERF = #itemCodePerf#
+		</isNotEmpty>
+		<isNotEmpty prepend=" AND " property="bc001">
+			BC001 = #bc001#
+		</isNotEmpty>
+		<isNotEmpty prepend=" AND " property="bc002">
+			BC002 = #bc002#
+		</isNotEmpty>
+		<isNotEmpty prepend=" AND " property="bc003">
+			BC003 = #bc003#
+		</isNotEmpty>
+		<isNotEmpty prepend=" AND " property="bc004">
+			BC004 = #bc004#
+		</isNotEmpty>
+		<isNotEmpty prepend=" AND " property="bc005">
+			BC005 = #bc005#
+		</isNotEmpty>
+		<isNotEmpty prepend=" AND " property="bc006">
+			BC006 = #bc006#
+		</isNotEmpty>
+		<isNotEmpty prepend=" AND " property="bc007">
+			BC007 = #bc007#
+		</isNotEmpty>
+		<isNotEmpty prepend=" AND " property="bc008">
+			BC008 = #bc008#
+		</isNotEmpty>
+		<isNotEmpty prepend=" AND " property="bc009">
+			BC009 = #bc009#
+		</isNotEmpty>
+		<isNotEmpty prepend=" AND " property="bc010">
+			BC010 = #bc010#
+		</isNotEmpty>
+		<isNotEmpty prepend=" AND " property="bc011">
+			BC011 = #bc011#
+		</isNotEmpty>
+		<isNotEmpty prepend=" AND " property="bc012">
+			BC012 = #bc012#
+		</isNotEmpty>
+		<isNotEmpty prepend=" AND " property="bc013">
+			BC013 = #bc013#
+		</isNotEmpty>
+		<isNotEmpty prepend=" AND " property="bc014">
+			BC014 = #bc014#
+		</isNotEmpty>
+		<isNotEmpty prepend=" AND " property="bc015">
+			BC015 = #bc015#
+		</isNotEmpty>
+		<isNotEmpty prepend=" AND " property="bc016">
+			BC016 = #bc016#
+		</isNotEmpty>
+		<isNotEmpty prepend=" AND " property="bc017">
+			BC017 = #bc017#
+		</isNotEmpty>
+		<isNotEmpty prepend=" AND " property="bc018">
+			BC018 = #bc018#
+		</isNotEmpty>
+		<isNotEmpty prepend=" AND " property="bc019">
+			BC019 = #bc019#
+		</isNotEmpty>
+		<isNotEmpty prepend=" AND " property="bc020">
+			BC020 = #bc020#
+		</isNotEmpty>
+		<isNotEmpty prepend=" AND " property="bn001">
+			BN001 = #bn001#
+		</isNotEmpty>
+		<isNotEmpty prepend=" AND " property="bn002">
+			BN002 = #bn002#
+		</isNotEmpty>
+		<isNotEmpty prepend=" AND " property="bn003">
+			BN003 = #bn003#
+		</isNotEmpty>
+		<isNotEmpty prepend=" AND " property="bn004">
+			BN004 = #bn004#
+		</isNotEmpty>
+		<isNotEmpty prepend=" AND " property="bn005">
+			BN005 = #bn005#
+		</isNotEmpty>
+		<isNotEmpty prepend=" AND " property="bn006">
+			BN006 = #bn006#
+		</isNotEmpty>
+		<isNotEmpty prepend=" AND " property="bn007">
+			BN007 = #bn007#
+		</isNotEmpty>
+		<isNotEmpty prepend=" AND " property="bn008">
+			BN008 = #bn008#
+		</isNotEmpty>
+		<isNotEmpty prepend=" AND " property="bn009">
+			BN009 = #bn009#
+		</isNotEmpty>
+		<isNotEmpty prepend=" AND " property="bn010">
+			BN010 = #bn010#
+		</isNotEmpty>
+		<isNotEmpty prepend=" AND " property="bn011">
+			BN011 = #bn011#
+		</isNotEmpty>
+		<isNotEmpty prepend=" AND " property="bn012">
+			BN012 = #bn012#
+		</isNotEmpty>
+		<isNotEmpty prepend=" AND " property="bn013">
+			BN013 = #bn013#
+		</isNotEmpty>
+		<isNotEmpty prepend=" AND " property="bn014">
+			BN014 = #bn014#
+		</isNotEmpty>
+		<isNotEmpty prepend=" AND " property="bn015">
+			BN015 = #bn015#
+		</isNotEmpty>
+		<isNotEmpty prepend=" AND " property="bn016">
+			BN016 = #bn016#
+		</isNotEmpty>
+		<isNotEmpty prepend=" AND " property="bn017">
+			BN017 = #bn017#
+		</isNotEmpty>
+		<isNotEmpty prepend=" AND " property="bn018">
+			BN018 = #bn018#
+		</isNotEmpty>
+		<isNotEmpty prepend=" AND " property="bn019">
+			BN019 = #bn019#
+		</isNotEmpty>
+		<isNotEmpty prepend=" AND " property="bn020">
+			BN020 = #bn020#
+		</isNotEmpty>
+	-->
+
+	<insert id="insert">
+		INSERT INTO iplatim.timmbs01 (ID,  <!-- 主键 -->
+										RCTOR,  <!-- 记录创建责任者 -->
+										RCTIME,  <!-- 记录创建时刻 -->
+										RRTOR,  <!-- 记录修改责任者 -->
+										RRTIME,  <!-- 记录修改时刻 -->
+										RDTOR,  <!-- 修改/删除责任者 -->
+										RDTIME,  <!-- 修改/删除时间 -->
+										RSTATE,  <!-- 归档标记 -->
+										RDEL,  <!-- 删除标记 -->
+										COM_NAME,  <!-- 公司(帐套)中文 -->
+										COM_CODE,  <!-- 公司(帐套)代码 -->
+										ITEM_CODE,  <!-- 指标代码 -->
+										ITEM_NAME,  <!-- 指标简称 -->
+										ITEM_DES,  <!-- 指标描述 -->
+										MEAS_UNIT,  <!-- 计量单位 -->
+										ALGO_SUB,  <!-- 子项算法 -->
+										ALGO_PAR,  <!-- 母项算法 -->
+										DATA_TYPE,  <!-- 数据类型 -->
+										ITEM_CODE_PERF,  <!-- 实绩指标代码 -->
+										BC001,  <!-- 备用字符001 -->
+										BC002,  <!-- 备用字符002 -->
+										BC003,  <!-- 备用字符003 -->
+										BC004,  <!-- 备用字符004 -->
+										BC005,  <!-- 备用字符005 -->
+										BC006,  <!-- 备用字符006 -->
+										BC007,  <!-- 备用字符007 -->
+										BC008,  <!-- 备用字符008 -->
+										BC009,  <!-- 备用字符009 -->
+										BC010,  <!-- 备用字符010 -->
+										BC011,  <!-- 备用字符011 -->
+										BC012,  <!-- 备用字符012 -->
+										BC013,  <!-- 备用字符013 -->
+										BC014,  <!-- 备用字符014 -->
+										BC015,  <!-- 备用字符015 -->
+										BC016,  <!-- 备用字符016 -->
+										BC017,  <!-- 备用字符017 -->
+										BC018,  <!-- 备用字符018 -->
+										BC019,  <!-- 备用字符019 -->
+										BC020,  <!-- 备用字符020 -->
+										BN001,  <!-- 备用数值001 -->
+										BN002,  <!-- 备用数值002 -->
+										BN003,  <!-- 备用数值003 -->
+										BN004,  <!-- 备用数值004 -->
+										BN005,  <!-- 备用数值005 -->
+										BN006,  <!-- 备用数值006 -->
+										BN007,  <!-- 备用数值007 -->
+										BN008,  <!-- 备用数值008 -->
+										BN009,  <!-- 备用数值009 -->
+										BN010,  <!-- 备用数值010 -->
+										BN011,  <!-- 备用数值011 -->
+										BN012,  <!-- 备用数值012 -->
+										BN013,  <!-- 备用数值013 -->
+										BN014,  <!-- 备用数值014 -->
+										BN015,  <!-- 备用数值015 -->
+										BN016,  <!-- 备用数值016 -->
+										BN017,  <!-- 备用数值017 -->
+										BN018,  <!-- 备用数值018 -->
+										BN019,  <!-- 备用数值019 -->
+										BN020  <!-- 备用数值020 -->
+										)		 
+	    VALUES (#id#, #rctor#, #rctime#, #rrtor#, #rrtime#, #rdtor#, #rdtime#, #rstate#, #rdel#, #comName#, #comCode#, #itemCode#, #itemName#, #itemDes#, #measUnit#, #algoSub#, #algoPar#, #dataType#, #itemCodePerf#, #bc001#, #bc002#, #bc003#, #bc004#, #bc005#, #bc006#, #bc007#, #bc008#, #bc009#, #bc010#, #bc011#, #bc012#, #bc013#, #bc014#, #bc015#, #bc016#, #bc017#, #bc018#, #bc019#, #bc020#, #bn001#, #bn002#, #bn003#, #bn004#, #bn005#, #bn006#, #bn007#, #bn008#, #bn009#, #bn010#, #bn011#, #bn012#, #bn013#, #bn014#, #bn015#, #bn016#, #bn017#, #bn018#, #bn019#, #bn020#) 
+	</insert>
+  
+	<delete id="delete">
+		DELETE FROM iplatim.timmbs01 WHERE 
+			ID = #id#
+	</delete>
+
+	<update id="update">
+		UPDATE iplatim.timmbs01 
+		SET 
+					RCTOR	= #rctor#,   <!-- 记录创建责任者 -->  
+					RCTIME	= #rctime#,   <!-- 记录创建时刻 -->  
+					RRTOR	= #rrtor#,   <!-- 记录修改责任者 -->  
+					RRTIME	= #rrtime#,   <!-- 记录修改时刻 -->  
+					RDTOR	= #rdtor#,   <!-- 修改/删除责任者 -->  
+					RDTIME	= #rdtime#,   <!-- 修改/删除时间 -->  
+					RSTATE	= #rstate#,   <!-- 归档标记 -->  
+					RDEL	= #rdel#,   <!-- 删除标记 -->  
+					COM_NAME	= #comName#,   <!-- 公司(帐套)中文 -->  
+					COM_CODE	= #comCode#,   <!-- 公司(帐套)代码 -->  
+					ITEM_CODE	= #itemCode#,   <!-- 指标代码 -->  
+					ITEM_NAME	= #itemName#,   <!-- 指标简称 -->  
+					ITEM_DES	= #itemDes#,   <!-- 指标描述 -->  
+					MEAS_UNIT	= #measUnit#,   <!-- 计量单位 -->  
+					ALGO_SUB	= #algoSub#,   <!-- 子项算法 -->  
+					ALGO_PAR	= #algoPar#,   <!-- 母项算法 -->  
+					DATA_TYPE	= #dataType#,   <!-- 数据类型 -->  
+					ITEM_CODE_PERF	= #itemCodePerf#,   <!-- 实绩指标代码 -->  
+					BC001	= #bc001#,   <!-- 备用字符001 -->  
+					BC002	= #bc002#,   <!-- 备用字符002 -->  
+					BC003	= #bc003#,   <!-- 备用字符003 -->  
+					BC004	= #bc004#,   <!-- 备用字符004 -->  
+					BC005	= #bc005#,   <!-- 备用字符005 -->  
+					BC006	= #bc006#,   <!-- 备用字符006 -->  
+					BC007	= #bc007#,   <!-- 备用字符007 -->  
+					BC008	= #bc008#,   <!-- 备用字符008 -->  
+					BC009	= #bc009#,   <!-- 备用字符009 -->  
+					BC010	= #bc010#,   <!-- 备用字符010 -->  
+					BC011	= #bc011#,   <!-- 备用字符011 -->  
+					BC012	= #bc012#,   <!-- 备用字符012 -->  
+					BC013	= #bc013#,   <!-- 备用字符013 -->  
+					BC014	= #bc014#,   <!-- 备用字符014 -->  
+					BC015	= #bc015#,   <!-- 备用字符015 -->  
+					BC016	= #bc016#,   <!-- 备用字符016 -->  
+					BC017	= #bc017#,   <!-- 备用字符017 -->  
+					BC018	= #bc018#,   <!-- 备用字符018 -->  
+					BC019	= #bc019#,   <!-- 备用字符019 -->  
+					BC020	= #bc020#,   <!-- 备用字符020 -->  
+					BN001	= #bn001#,   <!-- 备用数值001 -->  
+					BN002	= #bn002#,   <!-- 备用数值002 -->  
+					BN003	= #bn003#,   <!-- 备用数值003 -->  
+					BN004	= #bn004#,   <!-- 备用数值004 -->  
+					BN005	= #bn005#,   <!-- 备用数值005 -->  
+					BN006	= #bn006#,   <!-- 备用数值006 -->  
+					BN007	= #bn007#,   <!-- 备用数值007 -->  
+					BN008	= #bn008#,   <!-- 备用数值008 -->  
+					BN009	= #bn009#,   <!-- 备用数值009 -->  
+					BN010	= #bn010#,   <!-- 备用数值010 -->  
+					BN011	= #bn011#,   <!-- 备用数值011 -->  
+					BN012	= #bn012#,   <!-- 备用数值012 -->  
+					BN013	= #bn013#,   <!-- 备用数值013 -->  
+					BN014	= #bn014#,   <!-- 备用数值014 -->  
+					BN015	= #bn015#,   <!-- 备用数值015 -->  
+					BN016	= #bn016#,   <!-- 备用数值016 -->  
+					BN017	= #bn017#,   <!-- 备用数值017 -->  
+					BN018	= #bn018#,   <!-- 备用数值018 -->  
+					BN019	= #bn019#,   <!-- 备用数值019 -->  
+					BN020	= #bn020#  <!-- 备用数值020 -->  
+			WHERE 	
+			ID = #id#
+	</update>
+  
+</sqlMap>

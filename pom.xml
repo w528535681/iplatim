@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+
+  <parent>
+    <groupId>com.baosight.iplat4j</groupId>
+    <artifactId>iplat4j-boot-starter</artifactId>
+    <version>6.2.1231.2</version>
+  </parent>
+
+  <groupId>com.baosight.iplatim</groupId>
+  <artifactId>iplatim</artifactId>
+  <version>1.0-SNAPSHOT</version>
+  <packaging>war</packaging>
+
+  <name>iplatim Maven Webapp</name>
+
+  <properties>
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    <maven.compiler.source>1.8</maven.compiler.source>
+    <maven.compiler.target>1.8</maven.compiler.target>
+  </properties>
+
+  <dependencies>
+    <!--单元测试-->
+    <dependency>
+      <groupId>org.springframework.boot</groupId>
+      <artifactId>spring-boot-starter-test</artifactId>
+      <scope>test</scope>
+      <exclusions>
+        <exclusion>
+          <artifactId>android-json</artifactId>
+          <groupId>com.vaadin.external.google</groupId>
+        </exclusion>
+      </exclusions>
+    </dependency>
+  </dependencies>
+
+  <!--<build>
+    <finalName>iplatim</finalName>
+    <pluginManagement>&lt;!&ndash; lock down plugins versions to avoid using Maven defaults (may be moved to parent pom) &ndash;&gt;
+      <plugins>
+        <plugin>
+          <artifactId>maven-clean-plugin</artifactId>
+          <version>3.1.0</version>
+        </plugin>
+        &lt;!&ndash; see http://maven.apache.org/ref/current/maven-core/default-bindings.html#Plugin_bindings_for_war_packaging &ndash;&gt;
+        <plugin>
+          <artifactId>maven-resources-plugin</artifactId>
+          <version>3.0.2</version>
+        </plugin>
+        <plugin>
+          <artifactId>maven-compiler-plugin</artifactId>
+          <version>3.8.0</version>
+        </plugin>
+        <plugin>
+          <artifactId>maven-surefire-plugin</artifactId>
+          <version>2.22.1</version>
+        </plugin>
+        <plugin>
+          <artifactId>maven-war-plugin</artifactId>
+          <version>3.2.2</version>
+        </plugin>
+        <plugin>
+          <artifactId>maven-install-plugin</artifactId>
+          <version>2.5.2</version>
+        </plugin>
+        <plugin>
+          <artifactId>maven-deploy-plugin</artifactId>
+          <version>2.8.2</version>
+        </plugin>
+      </plugins>
+    </pluginManagement>
+  </build>-->
+
+
+  <build>
+    <resources>
+      <resource>
+        <directory>src/main/java</directory>
+        <includes>
+          <include>**/*.xml</include>
+        </includes>
+      </resource>
+      <resource>
+        <directory>src/main/resources</directory>
+        <filtering>false</filtering>
+        <includes>
+          <include>**/*</include>
+        </includes>
+      </resource>
+    </resources>
+
+    <plugins>
+      <plugin>
+        <!--用以打war包-->
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-war-plugin</artifactId>
+        <version>3.2.2</version>
+        <configuration>
+          <warSourceExcludes>src/main/resources/META-INF/**</warSourceExcludes>
+          <packagingExcludes>WEB-INF/classes/META-INF/**</packagingExcludes>
+          <webResources>
+            <resource>
+              <directory>src/main/resources/META-INF/resources</directory>
+              <filtering>false</filtering>
+              <targetPath>/</targetPath>
+            </resource>
+          </webResources>
+        </configuration>
+      </plugin>
+
+    </plugins>
+  </build>
+
+  <repositories>
+    <repository>
+      <id>baocloud-maven</id>
+      <name>baocloud maven</name>
+      <url>http://nexus.baocloud.cn/content/groups/public/</url>
+    </repository>
+  </repositories>
+
+  <pluginRepositories>
+    <pluginRepository>
+      <id>baocloud-maven</id>
+      <name>baocloud maven</name>
+      <url>http://nexus.baocloud.cn/content/groups/public/</url>
+    </pluginRepository>
+  </pluginRepositories>
+
+  <distributionManagement>
+    <repository>
+      <id>baocloud-maven</id>
+      <name>宝之云的 Maven 库</name>
+      <url>http://nexus.baocloud.cn/content/repositories/releases/</url>
+    </repository>
+    <snapshotRepository>
+      <id>baocloud-maven</id>
+      <name>宝之云的 Maven SNAPSHOT库</name>
+      <url>http://nexus.baocloud.cn/content/repositories/snapshots/</url>
+    </snapshotRepository>
+  </distributionManagement>
+</project>
